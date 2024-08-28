@@ -27,7 +27,6 @@ export default function Tetris() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [score, setScore] = useState(0)
   const [gameOver, setGameOver] = useState(false)
-  // const [isPaused, setIsPaused] = useState(false)
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -196,10 +195,6 @@ export default function Tetris() {
     setGameOver(false)
   }
 
-  // const handlePause = () => {
-  //   setIsPaused(true)
-  // };
-
   return (
     <div className={'container'}>
       <h1 className={'title'}>Tetris</h1>
@@ -218,8 +213,8 @@ export default function Tetris() {
       </div>
       <div className={'score'}>Score: {score}</div>
       <div className='controls'>
-        <button title='Reset' onClick={handleReset}>Reset</button>
-        <button title='Reset' onClick={() => alert('funcion en desarrollo')}>Pause</button>
+        {gameOver && <button title='Reset' onClick={handleReset}>Reset</button>}
+        <button title='Reset' onClick={() => alert('Juego pausado')}>Pause</button>
       </div>
     </div>
   )
