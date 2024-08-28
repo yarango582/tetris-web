@@ -196,9 +196,9 @@ export default function Tetris() {
     setGameOver(false)
   }
 
-  const handlePause = () => {
-    setIsPaused(true)
-  };
+  // const handlePause = () => {
+  //   setIsPaused(true)
+  // };
 
   return (
     <div className={'container'}>
@@ -219,7 +219,7 @@ export default function Tetris() {
       <div className={'score'}>Score: {score}</div>
       <div className='controls'>
         <button title='Reset' onClick={handleReset}>Reset</button>
-        <button title='Reset' onClick={handlePause}>Pause</button>
+        <button title='Reset' onClick={() => alert('funcion en desarrollo')}>Pause</button>
       </div>
     </div>
   )
